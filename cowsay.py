@@ -1,17 +1,12 @@
-stuff = input("Put cosa: ")
+import argparse
 
+# define the parse object
+parser = argparse.ArgumentParser(
+    prog="Cowsay by Destro",
+    description="This program is just like cowsay",
+    epilog="LARGA VIDA A Arstotzka!!!")
 
-vaca = f"""
- ____
-<{stuff}>
- ----
-        (__)
-        (oo)
-  /-------.
- / |     ||
-*  ||----||
-   ~~    ~~
+parser.add_argument('--monkey',
+                    help='This will use a monkey instead of the cow')
 
-"""
-
-print(vaca)
+args = parser.parse_args()
